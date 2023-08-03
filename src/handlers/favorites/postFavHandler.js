@@ -3,10 +3,13 @@ const postFavControllers = require('../../controllers/favorites/postFavControlle
 const postFavHandler = async (req,res)=>{
  
   const {VideogameId} = req.body;
+
+  const source = isNaN(VideogameId) ? "BDD" : "API"
+
   console.log("Handler queeeeeeeeee->", VideogameId)
     try {
      
-      const newFav = await postFavControllers(VideogameId);
+      const newFav = await postFavControllers(VideogameId, source);
       return res.status(200).send(newFav);
 
     } catch (error) {
