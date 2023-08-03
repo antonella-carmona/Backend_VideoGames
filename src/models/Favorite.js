@@ -9,9 +9,7 @@ module.exports = (sequelize) => {
         defaultValue: DataTypes.UUIDV4,
         primaryKey:true
     },
-    apiId: {
-      type: DataTypes.INTEGER,
-    },
+   
   },
   {timestamps: false, freezeTableName:true}
   );
