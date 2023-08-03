@@ -54,8 +54,8 @@ const { Videogame, Genres , Favorite} = sequelize.models;
 Videogame.belongsToMany(Genres, {through: "GenresVideogame"})
 Genres.belongsToMany(Videogame, {through: "GenresVideogame"})
 
-Videogame.hasMany(Favorite)
-Favorite.belongsTo(Videogame)
+Videogame.belongsTo(Favorite)
+Favorite.belongsTo(Videogame) //uno a muchos
 
 
 
