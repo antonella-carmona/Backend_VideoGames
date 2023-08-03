@@ -11,7 +11,6 @@ module.exports = (sequelize) => {
     },
     apiId: {
       type: DataTypes.INTEGER,
-      allowNull: true,
     },
   },
   {timestamps: false, freezeTableName:true}
