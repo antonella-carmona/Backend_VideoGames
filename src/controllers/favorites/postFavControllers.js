@@ -2,11 +2,11 @@ const {Favorite, Videogame} = require("../../db")
 
 
 
-const postFavControllers= async (VideogameId, source)=>{ //recibe id del videgames
-   console.log("volvio pepito", VideogameId)
-    
-   let vieneDeApiNumber;
-   const game = source === "API" ? vieneDeApiNumber = VideogameId : VideogameId
+const postFavControllers= async (  gameIdApi, gameIdBdd)=>{ //recibe id del videgames
+   console.log("volvio pepito", gameIdApi, gameIdBdd)
+
+   
+
    try {
       // Primero, verifica si el Videogame con el id proporcionado existe en la base de datos.
       // const videogame = await Videogame.findByPk(idVideogames);
@@ -17,8 +17,8 @@ const postFavControllers= async (VideogameId, source)=>{ //recibe id del videgam
   
       // Ahora, crea el nuevo registro de Favorite asociado al Videogame correspondiente.
       const newFav = await Favorite.create({
-         VideogameId: VideogameId, // Usa el nombre correcto del campo, que debe ser "videogameId".
-         id: vieneDeApiNumber
+         VideogameId: gameIdBdd, // Usa el nombre correcto del campo, que debe ser "videogameId".
+         apiId: gameIdApi
       });
   
       return newFav;           
