@@ -52,9 +52,9 @@ router.put("/videogames/:id", putGamesHandler)
 
 // const deleteFavHandler= require("../handlers/favorites/deleteFavHandler")
 
-router.post('favoritos/',postFavHandler); //Creación de Aviso
+router.post('/favoritos',postFavHandler); //Creación de Aviso
 
-router.get("favoritos/", getFavHandler ) //traer
+// router.get("favoritos/", getFavHandler ) //traer
 
 // router.delete("/:id", deleteFavHandler ) //quitar
 
