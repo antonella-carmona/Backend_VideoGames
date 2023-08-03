@@ -56,7 +56,7 @@ Genres.belongsToMany(Videogame, {through: "GenresVideogame"})
 
 // Videogame.hasMany(Favorite, { foreignKey: 'videogameId' });
 // Favorite.belongsTo(Videogame, { foreignKey: 'videogameId' });
-Favorite.belongsTo(Videogame);
+// Favorite.belongsTo(Videogame);
 
 module.exports = {
   ...sequelize.models, // para poder importar los modelos así: const { Product, User } = require('./db.js');
