@@ -2,7 +2,7 @@ const {Favorite, Videogame} = require("../../db")
 
 
 
-const postFavControllers= async (VideogameId  )=>{ //recibe id del videgames
+const postFavControllers= async (VideogameId)=>{ //recibe id del videgames
    console.log("volvio pepito", VideogameId)
 
    

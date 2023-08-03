@@ -9,6 +9,10 @@ module.exports = (sequelize) => {
         defaultValue: DataTypes.UUIDV4,
         primaryKey:true
     },
+    VideogameId: {
+      type: DataTypes.STRING, // Cambiar el tipo de dato a STRING para aceptar UUID y números
+      allowNull: false,
+    },
    
   },
   {timestamps: false, freezeTableName:true}
