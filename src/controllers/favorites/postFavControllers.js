@@ -1,23 +1,23 @@
 const {Favorite, Videogame} = require("../../db") 
+const { v4: uuidv4 } = require('uuid');
 
 
 
 const postFavControllers= async (VideogameId)=>{ //recibe id del videgames
    console.log("volvio pepito", VideogameId)
 
-   
-
    try {
-      // Primero, verifica si el Videogame con el id proporcionado existe en la base de datos.
-      // const videogame = await Videogame.findByPk(idVideogames);
-  
-      // if (!videogame) {
-      //   throw new Error("El videogame con el id proporcionado no existe.");
-      // }
+      let formattedVideogameId = VideogameId; // Por defecto, consideramos que el "VideogameId" es un UUID válido
+
+      // Verificamos si el "VideogameId" recibido es un número entero
+      if (!isNaN(VideogameId)) {
+        // Si es un número, lo convertimos al formato UUID
+        formattedVideogameId = uuidv4();
+      }
   
       // Ahora, crea el nuevo registro de Favorite asociado al Videogame correspondiente.
       const newFav = await Favorite.create({
-         VideogameId: VideogameId, // Usa el nombre correcto del campo, que debe ser "videogameId".
+         VideogameId: formattedVideogameId, // Usa el nombre correcto del campo, que debe ser "videogameId".
       });
   
       return newFav;           
