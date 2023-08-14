@@ -10,7 +10,7 @@ const bringAllGamesApi = async()=>{
     let apiInfo= [];
     for (let i= 1; i <= 5; i++) {
       const {data} = await axios.get(`${APIURL}?key=${KEY}&page=${i}`);
-      apiInfo = await [...apiInfo, ...data.results]
+      apiInfo = [...apiInfo, ...data.results]
     }    
 //---------------------------------------------------------
     const response= apiInfo.map( (game)=> {
