@@ -10,10 +10,10 @@ const bringAllGamesApi = async()=>{
     let apiInfo= [];
     for (let i= 1; i <= 5; i++) {
       const {data} = await axios.get(`${APIURL}?key=${KEY}&page=${i}`);
-      apiInfo = [...apiInfo, ...data.results]
+      apiInfo = await [...apiInfo, ...data.results]
     }    
 //---------------------------------------------------------
-    const response= apiInfo.map((game)=> {
+    const response= apiInfo.map(async (game)=> {
         const mapApi= {
             id: game.id,
             name: game.name,
@@ -24,9 +24,9 @@ const bringAllGamesApi = async()=>{
             genres: game.genres.map( gen => gen.name),
             created: false
         }
-        return mapApi;
+        return await mapApi;
     })
-    return response;
+    return await response;
 }
 
 //_____________________________________________
@@ -74,7 +74,7 @@ const getGamesName = async (name)=>{
 
     //----------------
   
-    const todos= [...responseBd ,...responseApi];
+    const todos= await [...responseBd ,...responseApi];
      return todos;
   }
 //______________________________________________________
