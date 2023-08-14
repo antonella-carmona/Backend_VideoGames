@@ -13,7 +13,7 @@ const bringAllGamesApi = async()=>{
       apiInfo = await [...apiInfo, ...data.results]
     }    
 //---------------------------------------------------------
-    const response= apiInfo.map(async (game)=> {
+    const response= apiInfo.map( (game)=> {
         const mapApi= {
             id: game.id,
             name: game.name,
@@ -24,9 +24,9 @@ const bringAllGamesApi = async()=>{
             genres: game.genres.map( gen => gen.name),
             created: false
         }
-        return await mapApi;
+        return mapApi;
     })
-    return await response;
+    return response;
 }
 
 //_____________________________________________
