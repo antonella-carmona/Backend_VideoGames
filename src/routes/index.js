@@ -10,8 +10,8 @@ const {getGenresGames} = require("../handlers/genresVideosGames");
 const { deleteGameById } = require('../handlers/deleteGame');
 const {putGamesHandler} = require("../handlers/putGameId");
 const {getPlatformsGames} = require("../handlers/getPlatforms");
-const {getFavHandler} = require("../handlers/favorites/getFavHandler");
-const {postFavHandler}=require('../handlers/favorites/postFavHandler');
+// const {getFavHandler} = require("../handlers/favorites/getFavHandler");
+// const {postFavHandler}=require('../handlers/favorites/postFavHandler');
 //______________________________________________________
 
 const router = Router();
@@ -52,7 +52,7 @@ router.put("/videogames/:id", putGamesHandler)
 
 // const deleteFavHandler= require("../handlers/favorites/deleteFavHandler")
 
-router.post('/favoritos',postFavHandler); //Creación de Aviso
+//router.post('/favoritos',postFavHandler); //Creación de Aviso
 
 // router.get("favoritos/", getFavHandler ) //traer
 

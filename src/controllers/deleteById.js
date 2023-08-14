@@ -6,6 +6,8 @@ const deleteGameId = async (id)=>{
         id: id
     }
   })
+
+  return { success: true, deleteId: id };
 }
 
 module.exports={
