@@ -68,11 +68,7 @@ const getGamesName = async (name)=>{
     );
   
     const responseApi = await bringAllGamesApi(); 
-    //-----------------
-
- 
-
-    //----------------
+    
   
     const todos= await [...responseBd ,...responseApi];
      return todos;
